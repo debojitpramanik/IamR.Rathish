@@ -1,524 +1,223 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>R. Rathish, B.Sc. | Housekeeping Supervisor</title>
-  <meta name="description" content="Portfolio of R. Rathish, B.Sc. Hotel Management graduate with housekeeping and training experience at Le Méridien Kochi, Four Points by Sheraton and Gokulam Park Sabari.">
-
-  <!-- Add .js class immediately to prevent flash of invisible content -->
-  <script>document.documentElement.classList.add('js');</script>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Tailwind CSS Play CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Tailwind CDN Configuration -->
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            bg: { light: '#f6f3ee', dark: '#111b1c' },
-            surface: { light: '#ffffff', dark: '#182627' },
-            ink: { light: '#1c2a2e', dark: '#ece6da' },
-            muted: { light: '#5c6a6d', dark: '#a3b0b1' },
-            line: { light: '#ddd6ca', dark: '#2b3c3d' },
-            accent: { light: '#1f4a4c', dark: '#7fb5b0' },
-            brass: { DEFAULT: '#a8843f', light: '#c9a55c', hover: '#dbb96f' },
-            hero: { bg: '#14302f', dark: '#0c1a1a', ink: '#f3ede1' }
-          },
-          fontFamily: {
-            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-            sans: ['"Outfit"', 'system-ui', 'sans-serif'],
-          },
-          keyframes: {
-            rise: {
-              '0%': { opacity: '0', transform: 'translateY(26px) scale(0.97)', filter: 'blur(4px)' },
-              '100%': { opacity: '1', transform: 'translateY(0) scale(1)', filter: 'blur(0px)' },
-            },
-            drift: {
-              '0%': { transform: 'translate(0, 0) scale(1) rotate(0deg)' },
-              '100%': { transform: 'translate(-28px, 22px) scale(1.08) rotate(6deg)' },
-            },
-            shimmer: {
-              '100%': { transform: 'translateX(100%)' }
-            }
-          },
-          animation: {
-            'rise-1': 'rise 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both',
-            'rise-2': 'rise 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both',
-            'rise-3': 'rise 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both',
-            'rise-4': 'rise 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both',
-            'rise-5': 'rise 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both',
-            'drift-slow': 'drift 14s ease-in-out infinite alternate',
-            'drift-reverse': 'drift 18s ease-in-out infinite alternate-reverse',
-          }
-        }
-      }
-    };
-  </script>
-
-  <!-- Standard CSS for Animations & Pseudo-elements (Zero @apply Errors) -->
-  <style>
-    html {
-      scroll-padding-top: 5rem;
-    }
-
-    /* Staggered Blur + Slide Reveal (Only hides when JS is active) */
-    html.js .reveal-item {
-      opacity: 0;
-      filter: blur(4px);
-      transform: translateY(28px) scale(0.98);
-      transition:
-        opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-        filter 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-      transition-delay: var(--delay, 0s);
-      will-change: opacity, transform, filter;
-    }
-
-    html.js .reveal-item.is-visible {
-      opacity: 1;
-      filter: blur(0px);
-      transform: translateY(0) scale(1);
-    }
-
-    /* Interactive Card Radial Glare */
-    .interactive-card {
-      position: relative;
-      overflow: hidden;
-      transform-style: preserve-3d;
-    }
-
-    .interactive-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        480px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-        rgba(201, 165, 92, 0.12),
-        transparent 40%
-      );
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-
-    .interactive-card:hover::after {
-      opacity: 1;
-    }
-
-    /* Navbar Active Underline */
-    .nav-link {
-      position: relative;
-    }
-
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 0;
-      height: 2px;
-      background-color: #a8843f;
-      transition: width 0.3s ease;
-    }
-
-    .nav-link:hover::after,
-    .nav-link.active::after {
-      width: 100%;
-    }
-
-    .nav-link.active {
-      font-weight: 500;
-      color: #1c2a2e;
-    }
-
-    html.dark .nav-link.active {
-      color: #ece6da;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, ::before, ::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-      html.js .reveal-item {
-        opacity: 1 !important;
-        filter: none !important;
-        transform: none !important;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rathish Rajendran — Hospitality Training &amp; Housekeeping Professional</title>
+<meta name="description" content="Portfolio of Rathish Rajendran, B.Sc. Hotel Management — Training Supervisor, Housekeeping at Gokulam Park Sabari OMR, Chennai.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%8E%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<script>
+(function(){try{var t=localStorage.getItem('theme');if(!t){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    fontFamily: { heading: ['"Cormorant Garamond"','Georgia','serif'], body: ['Manrope','system-ui','sans-serif'] },
+    colors: {
+      bg: 'rgb(var(--bg) / <alpha-value>)', surface: 'rgb(var(--surface) / <alpha-value>)',
+      ink: 'rgb(var(--ink) / <alpha-value>)', muted: 'rgb(var(--muted) / <alpha-value>)',
+      line: 'rgb(var(--line) / <alpha-value>)', accent: 'rgb(var(--accent) / <alpha-value>)',
+      brass: 'rgb(var(--brass) / <alpha-value>)'
+    },
+    keyframes: {
+      drift: { '0%,100%': { transform: 'translate3d(0,0,0) rotate(0deg)' }, '50%': { transform: 'translate3d(14px,-22px,0) rotate(8deg)' } },
+      orbit: { to: { transform: 'rotate(360deg)' } },
+      shimmer: { to: { transform: 'translateX(220%) skewX(-20deg)' } }
+    },
+    animation: { drift: 'drift 9s ease-in-out infinite', orbit: 'orbit 40s linear infinite' }
+  } }
+};
+</script>
+<style>
+:root{--bg:248 245 238;--surface:255 253 248;--ink:16 40 32;--muted:98 112 104;--line:219 212 196;--accent:15 92 70;--brass:176 133 51}
+[data-theme="dark"]{--bg:9 20 17;--surface:16 33 28;--ink:238 233 220;--muted:157 170 160;--line:38 62 54;--accent:52 190 142;--brass:214 170 85}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{background:rgb(var(--bg));color:rgb(var(--ink));transition:background .4s,color .4s}
+.reveal{opacity:0;transform:translateY(28px);filter:blur(10px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1),filter .9s cubic-bezier(.16,1,.3,1);transition-delay:var(--delay,0ms)}
+.reveal.in{opacity:1;transform:none;filter:none}
+.tilt{transform-style:preserve-3d;transition:transform .25s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+.tilt::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(380px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgb(var(--brass)/.22),transparent 60%)}
+.tilt:hover::after{opacity:1}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.6rem;border-radius:999px;font-weight:600;transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .3s}
+.btn::before{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgb(255 255 255/.45),transparent);transform:skewX(-20deg)}
+.btn:hover::before{animation:shimmer .9s ease}
+.nav-link{position:relative;color:rgb(var(--muted));transition:color .3s}
+.nav-link::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:100%;background:rgb(var(--brass));transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.nav-link.active,.nav-link:hover{color:rgb(var(--ink))}
+.nav-link.active::after{transform:scaleX(1)}
+.tl-node{background:rgb(var(--bg));border:2px solid rgb(var(--line));transition:all .5s}
+.tl-node.lit{background:rgb(var(--brass));border-color:rgb(var(--brass));box-shadow:0 0 0 6px rgb(var(--brass)/.2)}
+.chip{transition:transform .3s cubic-bezier(.16,1,.3,1),border-color .3s}
+.chip:hover{transform:translateY(-3px);border-color:rgb(var(--brass))}
+:focus-visible{outline:2px solid rgb(var(--brass));outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none;filter:none}}
+</style>
+<noscript><style>.reveal{opacity:1;transform:none;filter:none}</style></noscript>
 </head>
-<body class="bg-bg-light text-ink-light dark:bg-bg-dark dark:text-ink-dark font-sans text-[17px] leading-[1.7] transition-colors duration-300 antialiased selection:bg-brass/30">
+<body class="font-body antialiased">
+<div id="progress" class="fixed top-0 left-0 h-[3px] w-0 z-[60] bg-brass"></div>
 
-  <!-- Top Reading Progress Bar -->
-  <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-brass-light z-50 w-0 transition-[width] duration-75"></div>
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-bg/75 border-b border-line">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Primary">
+    <a href="#home" class="font-heading text-2xl font-semibold">R<span class="text-brass">.</span>Rathish</a>
+    <ul class="hidden md:flex gap-8 text-sm font-medium">
+      <li><a class="nav-link" href="#home">Home</a></li><li><a class="nav-link" href="#about">About</a></li>
+      <li><a class="nav-link" href="#experience">Experience</a></li><li><a class="nav-link" href="#skills">Skills</a></li>
+      <li><a class="nav-link" href="#education">Education</a></li><li><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+    <div class="flex items-center gap-2">
+      <button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="w-10 h-10 rounded-full border border-line bg-surface grid place-items-center hover:border-brass transition">
+        <span id="theme-icon" aria-hidden="true">☾</span>
+      </button>
+      <button id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden w-10 h-10 rounded-full border border-line bg-surface grid place-items-center">☰</button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0 transition-[max-height] duration-500 bg-bg/95">
+    <ul class="px-6 py-4 grid gap-4 text-sm font-medium">
+      <li><a class="nav-link" href="#about">About</a></li><li><a class="nav-link" href="#experience">Experience</a></li>
+      <li><a class="nav-link" href="#skills">Skills</a></li><li><a class="nav-link" href="#education">Education</a></li><li><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
 
-  <!-- Sticky Navigation Header -->
-  <header class="sticky top-0 z-30 bg-bg-light/90 dark:bg-bg-dark/90 backdrop-blur-md border-b border-line-light dark:border-line-dark">
-    <div class="max-w-[1060px] mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#top" class="font-serif font-bold text-2xl tracking-tight hover:text-brass transition-colors">
-        R. Rathish
-      </a>
+<main>
+<section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-16">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div data-depth="30" class="absolute top-[18%] right-[10%]"><div class="w-72 h-72 rounded-full border border-brass/40 animate-orbit"><span class="block w-3 h-3 rounded-full bg-brass -mt-1.5 ml-[calc(50%-6px)]"></span></div></div>
+    <div data-depth="-20" class="absolute bottom-[14%] left-[6%]"><div class="w-40 h-40 rotate-45 border border-accent/40 animate-drift"></div></div>
+    <div data-depth="45" class="absolute top-[30%] left-[48%]"><div class="w-16 h-16 rounded-full bg-accent/15 animate-drift" style="animation-delay:-3s"></div></div>
+    <div data-depth="-35" class="absolute bottom-[20%] right-[22%]"><div class="w-24 h-24 rounded-3xl bg-brass/15 animate-drift" style="animation-delay:-6s"></div></div>
+  </div>
+  <div class="relative max-w-6xl mx-auto px-6 py-20">
+    <p class="reveal text-sm tracking-[.3em] uppercase text-brass font-semibold">Hospitality · Training · Housekeeping</p>
+    <h1 class="reveal font-heading text-6xl sm:text-8xl font-semibold leading-[.95] mt-5" style="--delay:120ms">Rathish<br><em class="text-accent">Rajendran</em></h1>
+    <p class="reveal mt-8 max-w-xl text-lg text-muted" style="--delay:240ms">Training Supervisor, Housekeeping at Gokulam Park Sabari OMR — building 5-star standards through SOP training, quality audits and genuine care for guests.</p>
+    <div class="reveal mt-10 flex flex-wrap gap-4" style="--delay:360ms">
+      <a href="#contact" class="btn magnetic bg-accent text-bg">Let’s Connect →</a>
+      <a href="#experience" class="btn magnetic border border-line bg-surface">View Journey</a>
+    </div>
+  </div>
+</section>
 
-      <div class="flex items-center gap-4">
-        <nav aria-label="Main">
-          <ul id="menu" class="hidden md:flex items-center gap-7 text-[15px] absolute md:static top-16 left-0 right-0 bg-bg-light dark:bg-bg-dark md:bg-transparent border-b md:border-none border-line-light dark:border-line-dark px-6 py-4 md:p-0 flex-col md:flex-row shadow-lg md:shadow-none">
-            <li><a href="#profile" class="nav-link text-muted-light dark:text-muted-dark hover:text-accent-light dark:hover:text-accent-dark transition-colors block py-2 md:py-0">Profile</a></li>
-            <li><a href="#experience" class="nav-link text-muted-light dark:text-muted-dark hover:text-accent-light dark:hover:text-accent-dark transition-colors block py-2 md:py-0">Experience</a></li>
-            <li><a href="#skills" class="nav-link text-muted-light dark:text-muted-dark hover:text-accent-light dark:hover:text-accent-dark transition-colors block py-2 md:py-0">Skills</a></li>
-            <li><a href="#education" class="nav-link text-muted-light dark:text-muted-dark hover:text-accent-light dark:hover:text-accent-dark transition-colors block py-2 md:py-0">Education</a></li>
-            <li><a href="#career" class="nav-link text-muted-light dark:text-muted-dark hover:text-accent-light dark:hover:text-accent-dark transition-colors block py-2 md:py-0">Career path</a></li>
-            <li><a href="#contact" class="nav-link text-muted-light dark:text-muted-dark hover:text-accent-light dark:hover:text-accent-dark transition-colors block py-2 md:py-0">Contact</a></li>
+<section aria-label="Key figures" class="border-y border-line bg-surface">
+  <div class="max-w-6xl mx-auto px-6 py-14 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div class="reveal"><p class="font-heading text-5xl text-accent"><span class="counter" data-count="221">0</span></p><p class="text-sm text-muted mt-1">Guest rooms maintained at Le Méridien</p></div>
+    <div class="reveal" style="--delay:100ms"><p class="font-heading text-5xl text-accent"><span class="counter" data-count="90">0</span></p><p class="text-sm text-muted mt-1">Rooms managed at Four Points</p></div>
+    <div class="reveal" style="--delay:200ms"><p class="font-heading text-5xl text-accent"><span class="counter" data-count="3">0</span></p><p class="text-sm text-muted mt-1">Premium hotel properties</p></div>
+    <div class="reveal" style="--delay:300ms"><p class="font-heading text-5xl text-accent"><span class="counter" data-count="2" data-suffix="+">0</span></p><p class="text-sm text-muted mt-1">Years in hotel operations</p></div>
+  </div>
+</section>
+
+<section id="about" class="max-w-6xl mx-auto px-6 py-28 grid md:grid-cols-5 gap-12">
+  <div class="md:col-span-2"><p class="reveal text-sm tracking-[.3em] uppercase text-brass font-semibold">Career Objective</p>
+    <h2 class="reveal font-heading text-5xl mt-3" style="--delay:100ms">Standards, <em class="text-accent">taught</em> well.</h2></div>
+  <div class="md:col-span-3 space-y-5 text-lg text-muted">
+    <p class="reveal">A resolute hospitality professional specialising in hotel housekeeping and training, with proven experience in conducting SOP training, quality audits and maintaining 5-star cleanliness standards.</p>
+    <p class="reveal" style="--delay:120ms">A strong communicator and team leader, committed to guest satisfaction and operational excellence at Gokulam Park Sabari.</p>
+    <div class="reveal flex flex-wrap gap-3 pt-2" style="--delay:220ms">
+      <span class="chip px-4 py-2 rounded-full border border-line bg-surface text-sm">Public speaking</span>
+      <span class="chip px-4 py-2 rounded-full border border-line bg-surface text-sm">Emotional intelligence</span>
+      <span class="chip px-4 py-2 rounded-full border border-line bg-surface text-sm">Analytical thinking</span>
+      <span class="chip px-4 py-2 rounded-full border border-line bg-surface text-sm">Adaptive learner</span>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="bg-surface border-y border-line py-28">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="reveal text-sm tracking-[.3em] uppercase text-brass font-semibold">Professional Experience</p>
+    <h2 class="reveal font-heading text-5xl mt-3 mb-16" style="--delay:100ms">A growing <em class="text-accent">trajectory</em></h2>
+    <div id="timeline" class="relative pl-10 md:pl-14">
+      <div class="absolute left-3 md:left-5 top-0 bottom-0 w-[2px] bg-line"><div id="tl-fill" class="w-full h-0 bg-brass"></div></div>
+
+      <article class="relative mb-12 reveal">
+        <span class="tl-node absolute -left-[38px] md:-left-[54px] top-8 w-5 h-5 rounded-full"></span>
+        <div class="tilt rounded-2xl border border-line bg-bg p-7">
+          <p class="text-xs font-semibold tracking-widest text-brass uppercase">July 2026 – Present</p>
+          <h3 class="font-heading text-3xl mt-1">Training Supervisor, Housekeeping</h3>
+          <p class="text-accent font-medium">Gokulam Park Sabari OMR, Chennai</p>
+          <ul class="mt-4 space-y-2 text-muted list-disc pl-5">
+            <li>Conduct induction, on-the-job and refresher training for new and existing housekeeping staff.</li>
+            <li>Train teams on SOPs, grooming standards, guest interaction and service excellence.</li>
+            <li>Perform TNA and prepare the monthly training calendar with assessment reports.</li>
+            <li>Ensure compliance with brand standards, hygiene protocols and cleanliness audits.</li>
+            <li>Coordinate with the HK Head on manpower planning and guest complaint resolution.</li>
           </ul>
-        </nav>
+        </div>
+      </article>
 
-        <!-- Dark/Light Theme Switcher -->
-        <button id="theme-toggle" type="button" aria-label="Toggle color theme" class="p-2 rounded-md border border-line-light dark:border-line-dark hover:border-brass transition-colors text-sm">
-          <span id="theme-icon">🌙</span>
-        </button>
+      <article class="relative mb-12 reveal">
+        <span class="tl-node absolute -left-[38px] md:-left-[54px] top-8 w-5 h-5 rounded-full"></span>
+        <div class="tilt rounded-2xl border border-line bg-bg p-7">
+          <p class="text-xs font-semibold tracking-widest text-brass uppercase">May 2025 – July 2026</p>
+          <h3 class="font-heading text-3xl mt-1">Housekeeping Associate</h3>
+          <p class="text-accent font-medium">Le Méridien Kochi, Kerala</p>
+          <ul class="mt-4 space-y-2 text-muted list-disc pl-5">
+            <li>Maintained cleanliness of 221 guest rooms — beds, linens and bathrooms.</li>
+            <li>Ensured compliance with safety standards and hygiene policies (MSDS).</li>
+            <li>Reported maintenance issues to the supervisor immediately.</li>
+          </ul>
+        </div>
+      </article>
 
-        <!-- Mobile Hamburger Button -->
-        <button id="burger" type="button" aria-expanded="false" aria-controls="menu" class="md:hidden border border-line-light dark:border-line-dark rounded-md px-3 py-1.5 text-sm hover:border-brass transition-colors">
-          Menu
-        </button>
-      </div>
+      <article class="relative reveal">
+        <span class="tl-node absolute -left-[38px] md:-left-[54px] top-8 w-5 h-5 rounded-full"></span>
+        <div class="tilt rounded-2xl border border-line bg-bg p-7">
+          <p class="text-xs font-semibold tracking-widest text-brass uppercase">March 2024 – May 2025</p>
+          <h3 class="font-heading text-3xl mt-1">Guest Service Associate</h3>
+          <p class="text-accent font-medium">Four Points by Sheraton, Mahabalipuram</p>
+          <ul class="mt-4 space-y-2 text-muted list-disc pl-5">
+            <li>Maintained ninety guest rooms to Marriott SOP.</li>
+            <li>Managed discrepancy reports, guest complaints and emotional touchpoints.</li>
+            <li>Handled lost &amp; found, guest laundry and pantry supplies.</li>
+            <li>Operated cleaning machinery; managed mail and GXP procedures.</li>
+          </ul>
+        </div>
+      </article>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main id="top">
-    <!-- Hero Section -->
-    <section id="hero" class="relative overflow-hidden bg-hero-bg dark:bg-hero-dark text-hero-ink py-24 md:py-28">
-      <!-- Parallax Decorative Rings -->
-      <div id="ring-outer" class="pointer-events-none absolute -right-28 -top-28 w-[420px] h-[420px] rounded-full border border-brass-light/35 animate-drift-reverse"></div>
-      <div id="ring-inner" class="pointer-events-none absolute -right-14 -top-14 w-[300px] h-[300px] rounded-full border border-brass-light/25 animate-drift-slow"></div>
+<section id="skills" class="max-w-6xl mx-auto px-6 py-28">
+  <p class="reveal text-sm tracking-[.3em] uppercase text-brass font-semibold">Key Skills</p>
+  <h2 class="reveal font-heading text-5xl mt-3 mb-12" style="--delay:100ms">The <em class="text-accent">craft</em></h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="reveal tilt rounded-2xl border border-line bg-surface p-6"><h3 class="font-heading text-2xl">Training &amp; Development</h3><p class="mt-2 text-muted text-sm">Induction · TNA · SOP Training · Refresher Programs</p></div>
+    <div class="reveal tilt rounded-2xl border border-line bg-surface p-6" style="--delay:80ms"><h3 class="font-heading text-2xl">Housekeeping Operations</h3><p class="mt-2 text-muted text-sm">Room Cleaning · Public Area · Laundry · Linen Control</p></div>
+    <div class="reveal tilt rounded-2xl border border-line bg-surface p-6" style="--delay:160ms"><h3 class="font-heading text-2xl">Quality &amp; Compliance</h3><p class="mt-2 text-muted text-sm">Brand Standards · Audit Checklists · MSDS</p></div>
+    <div class="reveal tilt rounded-2xl border border-line bg-surface p-6"><h3 class="font-heading text-2xl">Leadership</h3><p class="mt-2 text-muted text-sm">Team Management · Communication · Problem Solving · Time Management</p></div>
+    <div class="reveal tilt rounded-2xl border border-line bg-surface p-6" style="--delay:80ms"><h3 class="font-heading text-2xl">Technical</h3><p class="mt-2 text-muted text-sm">OPERA/PMS · Cleaning Machinery · GXP</p></div>
+    <div class="reveal tilt rounded-2xl border border-line bg-surface p-6" style="--delay:160ms"><h3 class="font-heading text-2xl">Languages</h3><p class="mt-2 text-muted text-sm">Tamil · English</p></div>
+  </div>
+</section>
 
-      <div class="max-w-[1060px] mx-auto px-6 relative z-10">
-        <p class="text-brass-light text-[17px] tracking-wider uppercase mb-3.5 animate-rise-1">
-          Housekeeping Supervisor
-        </p>
-        <h1 class="font-serif leading-[1.15] text-5xl sm:text-7xl md:text-[6.2rem] font-bold animate-rise-2">
-          R. Rathish
-        </h1>
-        <div class="font-serif text-2xl md:text-3xl mt-2 mb-6 opacity-90 animate-rise-3">
-          B.Sc. Hotel Management
-        </div>
-        <p class="max-w-[58ch] opacity-85 mb-9 animate-rise-4">
-          Hospitality professional specialising in hotel housekeeping and training, with experience in SOP training, quality audits and maintaining 5-star cleanliness standards. A strong communicator and team leader committed to guest satisfaction and operational excellence.
-        </p>
-        <div class="flex flex-wrap gap-3.5 animate-rise-5">
-          <a href="#experience" class="magnetic-btn relative overflow-hidden group inline-block px-7 py-3.5 rounded bg-brass-light text-hero-bg font-medium border border-brass-light hover:bg-brass-hover transition-all duration-200 shadow-sm">
-            <span class="relative z-10">View Experience</span>
-            <span class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-[shimmer_1.2s_infinite]"></span>
-          </a>
-          <a href="https://drive.google.com/file/d/1i8kMPDUN1gpOHeZKB_Yeu2MJY7gUtPpJ/view?usp=sharing" target="_blank" rel="noopener" class="magnetic-btn inline-block px-7 py-3.5 rounded bg-transparent text-hero-ink font-medium border border-brass-light hover:bg-brass-light/15 transition-all duration-200">
-            Download CV
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Profile Section -->
-    <section id="profile" class="py-16 md:py-20">
-      <div class="max-w-[1060px] mx-auto px-6 grid md:grid-cols-[1.3fr_1fr] gap-10 md:gap-14 items-start">
-        <div class="space-y-4">
-          <h2 class="font-serif leading-[1.15] text-3xl md:text-[2.6rem] font-semibold mb-3 reveal-item">Professional profile</h2>
-          <p class="reveal-item">
-            I began my career in housekeeping at Four Points by Sheraton, Mahabalipuram, after training there as an intern, and went on to Le Méridien Kochi, where I looked after the cleanliness of 221 guest rooms.
-          </p>
-          <p class="reveal-item">
-            Today I am Training Supervisor, Housekeeping at Gokulam Park Sabari, OMR, Chennai. I run induction, on-the-job and refresher training, and work with the HK Head on manpower planning and guest complaint resolution.
-          </p>
-          <p class="reveal-item">
-            I work to brand standards, hygiene protocols and cleanliness audits, and I lead by communicating clearly and keeping the team learning.
-          </p>
-        </div>
-
-        <!-- Animated Stat Counters -->
-        <div class="border-l-2 border-brass pl-6 grid gap-5">
-          <div class="reveal-item group">
-            <b class="block font-serif text-2xl font-semibold group-hover:text-brass transition-colors">
-              <span data-count="3">3</span> hotels
-            </b>
-            <span class="text-muted-light dark:text-muted-dark text-[15px]">Gokulam Park, Le Méridien, Four Points by Sheraton</span>
-          </div>
-          <div class="reveal-item group">
-            <b class="block font-serif text-2xl font-semibold group-hover:text-brass transition-colors">
-              <span data-count="221">221</span> rooms
-            </b>
-            <span class="text-muted-light dark:text-muted-dark text-[15px]">Guest rooms kept to standard at Le Méridien Kochi</span>
-          </div>
-          <div class="reveal-item group">
-            <b class="block font-serif text-2xl font-semibold group-hover:text-brass transition-colors">
-              Marriott SOP
-            </b>
-            <span class="text-muted-light dark:text-muted-dark text-[15px]">Followed across <span data-count="90">90</span> rooms at Four Points</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-16 md:py-20 bg-surface-light dark:bg-surface-dark">
-      <div class="max-w-[1060px] mx-auto px-6">
-        <h2 class="font-serif leading-[1.15] text-3xl md:text-[2.6rem] font-semibold mb-3 reveal-item">Professional experience</h2>
-        <p class="text-muted-light dark:text-muted-dark max-w-[60ch] mb-10 reveal-item">
-          Housekeeping and training roles in Chennai, Kochi and Mahabalipuram.
-        </p>
-
-        <div class="grid gap-6">
-          <article class="interactive-card bg-surface-light dark:bg-surface-dark border border-line-light dark:border-line-dark hover:border-brass dark:hover:border-brass-light hover:shadow-[0_16px_36px_rgba(20,48,47,0.14)] rounded-md transition-all duration-300 p-7 md:p-8 reveal-item" data-tilt>
-            <header class="flex justify-between gap-3 flex-wrap mb-1.5">
-              <h3 class="font-serif leading-[1.15] text-2xl font-semibold">
-                Training Supervisor, Housekeeping
-                <span class="inline-block text-xs font-sans bg-accent-light dark:bg-accent-dark text-surface-light dark:text-surface-dark px-2.5 py-0.5 rounded-full ml-2 align-middle">Current</span>
-              </h3>
-              <span class="text-brass dark:text-brass-light font-medium whitespace-nowrap">July 2026 – Present</span>
-            </header>
-            <p class="text-muted-light dark:text-muted-dark mb-3.5">Gokulam Park Sabari, OMR, Chennai</p>
-            <ul class="list-disc pl-5 space-y-1.5">
-              <li>Conduct induction, on-the-job and refresher training for new and existing housekeeping staff.</li>
-              <li>Train teams on SOPs, grooming standards, guest interaction and service excellence.</li>
-              <li>Perform Training Needs Analysis (TNA) and prepare the monthly training calendar with assessment reports.</li>
-              <li>Ensure compliance with brand standards, hygiene protocols and cleanliness audits.</li>
-              <li>Coordinate with the HK Head on manpower planning and guest complaint resolution.</li>
-            </ul>
-          </article>
-
-          <article class="interactive-card bg-surface-light dark:bg-surface-dark border border-line-light dark:border-line-dark hover:border-brass dark:hover:border-brass-light hover:shadow-[0_16px_36px_rgba(20,48,47,0.14)] rounded-md transition-all duration-300 p-7 md:p-8 reveal-item" data-tilt>
-            <header class="flex justify-between gap-3 flex-wrap mb-1.5">
-              <h3 class="font-serif leading-[1.15] text-2xl font-semibold">Hotel Cleanliness Expert</h3>
-              <span class="text-brass dark:text-brass-light font-medium whitespace-nowrap">May 2025 – July 2026</span>
-            </header>
-            <p class="text-muted-light dark:text-muted-dark mb-3.5">Le Méridien Kochi, Kerala</p>
-            <ul class="list-disc pl-5 space-y-1.5">
-              <li>Maintained the cleanliness of 221 guest rooms, including making beds, changing linens and cleaning bathrooms.</li>
-              <li>Ensured compliance with safety standards and hygiene policies (MSDS).</li>
-              <li>Reported maintenance issues to the supervisor immediately.</li>
-            </ul>
-          </article>
-
-          <article class="interactive-card bg-surface-light dark:bg-surface-dark border border-line-light dark:border-line-dark hover:border-brass dark:hover:border-brass-light hover:shadow-[0_16px_36px_rgba(20,48,47,0.14)] rounded-md transition-all duration-300 p-7 md:p-8 reveal-item" data-tilt>
-            <header class="flex justify-between gap-3 flex-wrap mb-1.5">
-              <h3 class="font-serif leading-[1.15] text-2xl font-semibold">Guest Service Associate</h3>
-              <span class="text-brass dark:text-brass-light font-medium whitespace-nowrap">March 2024 – May 2025</span>
-            </header>
-            <p class="text-muted-light dark:text-muted-dark mb-3.5">Four Points by Sheraton, Mahabalipuram</p>
-            <ul class="list-disc pl-5 space-y-1.5">
-              <li>Maintained the cleanliness of ninety guest rooms per Marriott SOP.</li>
-              <li>Managed discrepancy reports, guest complaints and emotional touchpoints.</li>
-              <li>Managed lost and found items, guest laundry and pantry supplies.</li>
-              <li>Operated cleaning machinery and handled mail and GXP procedures.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-16 md:py-20">
-      <div class="max-w-[1060px] mx-auto px-6">
-        <h2 class="font-serif leading-[1.15] text-3xl md:text-[2.6rem] font-semibold mb-3 reveal-item">Skills</h2>
-        <p class="text-muted-light dark:text-muted-dark max-w-[60ch] mb-10 reveal-item">
-          Grouped by the areas I use day to day.
-        </p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="border-t-2 border-accent-light dark:border-accent-dark pt-3.5 reveal-item">
-            <h3 class="font-serif leading-[1.15] text-xl font-semibold mb-2.5">Training &amp; Development</h3>
-            <ul class="flex flex-wrap gap-2">
-              <li class="skill-chip">Induction</li>
-              <li class="skill-chip">TNA</li>
-              <li class="skill-chip">SOP training</li>
-              <li class="skill-chip">Refresher programs</li>
-            </ul>
-          </div>
-
-          <div class="border-t-2 border-accent-light dark:border-accent-dark pt-3.5 reveal-item">
-            <h3 class="font-serif leading-[1.15] text-xl font-semibold mb-2.5">Housekeeping Operations</h3>
-            <ul class="flex flex-wrap gap-2">
-              <li class="skill-chip">Room cleaning</li>
-              <li class="skill-chip">Public areas</li>
-              <li class="skill-chip">Laundry</li>
-              <li class="skill-chip">Linen control</li>
-            </ul>
-          </div>
-
-          <div class="border-t-2 border-accent-light dark:border-accent-dark pt-3.5 reveal-item">
-            <h3 class="font-serif leading-[1.15] text-xl font-semibold mb-2.5">Quality &amp; Compliance</h3>
-            <ul class="flex flex-wrap gap-2">
-              <li class="skill-chip">Brand standards</li>
-              <li class="skill-chip">Audit checklists</li>
-              <li class="skill-chip">MSDS</li>
-            </ul>
-          </div>
-
-          <div class="border-t-2 border-accent-light dark:border-accent-dark pt-3.5 reveal-item">
-            <h3 class="font-serif leading-[1.15] text-xl font-semibold mb-2.5">Leadership</h3>
-            <ul class="flex flex-wrap gap-2">
-              <li class="skill-chip">Team management</li>
-              <li class="skill-chip">Communication</li>
-              <li class="skill-chip">Problem solving</li>
-              <li class="skill-chip">Time management</li>
-            </ul>
-          </div>
-
-          <div class="border-t-2 border-accent-light dark:border-accent-dark pt-3.5 reveal-item">
-            <h3 class="font-serif leading-[1.15] text-xl font-semibold mb-2.5">Technical</h3>
-            <ul class="flex flex-wrap gap-2">
-              <li class="skill-chip">OPERA / PMS</li>
-              <li class="skill-chip">Cleaning machinery</li>
-              <li class="skill-chip">GXP</li>
-            </ul>
-          </div>
-
-          <div class="border-t-2 border-accent-light dark:border-accent-dark pt-3.5 reveal-item">
-            <h3 class="font-serif leading-[1.15] text-xl font-semibold mb-2.5">Languages</h3>
-            <ul class="flex flex-wrap gap-2">
-              <li class="skill-chip">Tamil</li>
-              <li class="skill-chip">English</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="py-16 md:py-20 bg-surface-light dark:bg-surface-dark">
-      <div class="max-w-[1060px] mx-auto px-6">
-        <h2 class="font-serif leading-[1.15] text-3xl md:text-[2.6rem] font-semibold mb-8 reveal-item">Education &amp; training</h2>
-        <div class="grid gap-6">
-          <article class="interactive-card bg-surface-light dark:bg-surface-dark border border-line-light dark:border-line-dark hover:border-brass dark:hover:border-brass-light hover:shadow-[0_16px_36px_rgba(20,48,47,0.14)] rounded-md transition-all duration-300 p-7 md:p-8 reveal-item" data-tilt>
-            <header class="flex justify-between gap-3 flex-wrap mb-1">
-              <h3 class="font-serif leading-[1.15] text-2xl font-semibold">B.Sc. Hotel Management</h3>
-              <span class="text-brass dark:text-brass-light font-medium">2021 – 2024</span>
-            </header>
-            <p class="text-muted-light dark:text-muted-dark m-0">Coastal Elango Institute of Hotel Management, Namakkal</p>
-          </article>
-
-          <article class="interactive-card bg-surface-light dark:bg-surface-dark border border-line-light dark:border-line-dark hover:border-brass dark:hover:border-brass-light hover:shadow-[0_16px_36px_rgba(20,48,47,0.14)] rounded-md transition-all duration-300 p-7 md:p-8 reveal-item" data-tilt>
-            <header class="flex justify-between gap-3 flex-wrap mb-1">
-              <h3 class="font-serif leading-[1.15] text-2xl font-semibold">Internship, Housekeeping</h3>
-              <span class="text-brass dark:text-brass-light font-medium">90 days</span>
-            </header>
-            <p class="text-muted-light dark:text-muted-dark m-0">Four Points by Sheraton · On-the-job training in housekeeping</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Career Progression Timeline (Fixed Valid HTML5 Structure) -->
-    <section id="career" class="py-16 md:py-20">
-      <div class="max-w-[1060px] mx-auto px-6">
-        <h2 class="font-serif leading-[1.15] text-3xl md:text-[2.6rem] font-semibold mb-3 reveal-item">Career progression</h2>
-        <p class="text-muted-light dark:text-muted-dark max-w-[60ch] mb-10 reveal-item">
-          From guest room care to leading housekeeping training.
-        </p>
-
-        <div id="timeline-wrap" class="relative pl-8 border-l-2 border-line-light dark:border-line-dark">
-          <!-- Scroll-driven Progress Fill outside <ol> for strict W3C compliance -->
-          <div id="timeline-fill" class="pointer-events-none absolute -left-[2px] top-0 w-[2px] bg-brass transition-all duration-150" style="height: 0%;"></div>
-
-          <ol id="timeline" class="space-y-9 m-0 p-0 list-none">
-            <li class="relative reveal-item group">
-              <span class="timeline-dot absolute -left-[41px] top-1.5 w-4 h-4 rounded-full bg-brass border-2 border-brass transition-transform duration-300 group-hover:scale-125"></span>
-              <time class="text-brass dark:text-brass-light font-medium text-[15px]">2021 – 2024</time>
-              <h3 class="font-serif leading-[1.15] text-2xl font-semibold mt-0.5">B.Sc. Hotel Management</h3>
-              <p class="text-muted-light dark:text-muted-dark mt-1">Coastal Elango Institute of Hotel Management, with a 90-day housekeeping internship at Four Points by Sheraton.</p>
-            </li>
-
-            <li class="relative reveal-item group">
-              <span class="timeline-dot absolute -left-[41px] top-1.5 w-4 h-4 rounded-full bg-bg-light dark:bg-bg-dark border-[3px] border-brass transition-transform duration-300 group-hover:scale-125"></span>
-              <time class="text-brass dark:text-brass-light font-medium text-[15px]">March 2024 – May 2025</time>
-              <h3 class="font-serif leading-[1.15] text-2xl font-semibold mt-0.5">Guest Service Associate</h3>
-              <p class="text-muted-light dark:text-muted-dark mt-1">Four Points by Sheraton, Mahabalipuram. Ninety rooms, guest complaints, lost and found, laundry.</p>
-            </li>
-
-            <li class="relative reveal-item group">
-              <span class="timeline-dot absolute -left-[41px] top-1.5 w-4 h-4 rounded-full bg-bg-light dark:bg-bg-dark border-[3px] border-brass transition-transform duration-300 group-hover:scale-125"></span>
-              <time class="text-brass dark:text-brass-light font-medium text-[15px]">May 2025 – July 2026</time>
-              <h3 class="font-serif leading-[1.15] text-2xl font-semibold mt-0.5">Hotel Cleanliness Expert</h3>
-              <p class="text-muted-light dark:text-muted-dark mt-1">Le Méridien Kochi. 221 guest rooms with MSDS and hygiene compliance.</p>
-            </li>
-
-            <li class="relative reveal-item group">
-              <span class="timeline-dot absolute -left-[41px] top-1.5 w-4 h-4 rounded-full bg-bg-light dark:bg-bg-dark border-[3px] border-brass transition-transform duration-300 group-hover:scale-125"></span>
-              <time class="text-brass dark:text-brass-light font-medium text-[15px]">July 2026 – Present</time>
-              <h3 class="font-serif leading-[1.15] text-2xl font-semibold mt-0.5">Training Supervisor, Housekeeping</h3>
-              <p class="text-muted-light dark:text-muted-dark mt-1">Gokulam Park Sabari, Chennai. Training, audits and manpower planning with the HK Head.</p>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- Professional Strengths Section -->
-    <section class="py-16 md:py-20 bg-surface-light dark:bg-surface-dark">
-      <div class="max-w-[1060px] mx-auto px-6">
-        <h2 class="font-serif leading-[1.15] text-3xl md:text-[2.6rem] font-semibold mb-8 reveal-item">Professional strengths</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          <div class="interactive-card bg-surface-light dark:bg-surface-dark border border-line-light dark:border-line-dark hover:border-brass dark:hover:border-brass-light hover:shadow-[0_16px_36px_rgba(20,48,47,0.14)] rounded-md transition-all duration-300 p-5 font-serif text-xl font-semibold reveal-item" data-tilt>Public speaking</div>
-          <div class="interactive-card bg-surface-light dark:bg-surface-dark border border-line-light dark:border-line-dark hover:border-brass dark:hover:border-brass-light hover:shadow-[0_16px_36px_rgba(20,48,47,0.14)] rounded-md transition-all duration-300 p-5 font-serif text-xl font-semibold reveal-item" data-tilt>Leadership &amp; team collaboration</div>
-          <div class="interactive-card bg-surface-light dark:bg-surface-dark border border-line-light dark:border-line-dark hover:border-brass dark:hover:border-brass-light hover:shadow-[0_16px_36px_rgba(20,48,47,0.14)] rounded-md transition-all duration-300 p-5 font-serif text-xl font-semibold reveal-item" data-tilt>Analytical thinking</div>
-          <div class="interactive-card bg-surface-light dark:bg-surface-dark border border-line-light dark:border-line-dark hover:border-brass dark:hover:border-brass-light hover:shadow-[0_16px_36px_rgba(20,48,47,0.14)] rounded-md transition-all duration-300 p-5 font-serif text-xl font-semibold reveal-item" data-tilt>Adaptive learner</div>
-          <div class="interactive-card bg-surface-light dark:bg-surface-dark border border-line-light dark:border-line-dark hover:border-brass dark:hover:border-brass-light hover:shadow-[0_16px_36px_rgba(20,48,47,0.14)] rounded-md transition-all duration-300 p-5 font-serif text-xl font-semibold reveal-item" data-tilt>Emotional intelligence</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 md:py-20 bg-hero-bg dark:bg-hero-dark text-hero-ink">
-      <div class="max-w-[1060px] mx-auto px-6">
-        <h2 class="font-serif leading-[1.15] text-3xl md:text-[2.6rem] font-semibold mb-3 reveal-item">Contact</h2>
-        <p class="text-[#b9c4c2] max-w-[60ch] mb-10 reveal-item">
-          Open to housekeeping supervisory and training roles.
-        </p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <a href="tel:+919500956984" class="block border border-brass-light/40 rounded-md p-5 hover:bg-brass-light/15 hover:-translate-y-1 transition-all duration-200 reveal-item">
-            <small class="block text-brass-light mb-1">Phone</small>
-            <span>+91 95009 56984</span>
-          </a>
-          <a href="mailto:rathish683@gmail.com" class="block border border-brass-light/40 rounded-md p-5 hover:bg-brass-light/15 hover:-translate-y-1 transition-all duration-200 reveal-item">
-            <small class="block text-brass-light mb-1">Email</small>
-            <span class="break-words">rathish683@gmail.com</span>
-          </a>
-          <a href="https://www.linkedin.com/in/rathish-rajendran-28367a311" target="_blank" rel="noopener" class="block border border-brass-light/40 rounded-md p-5 hover:bg-brass-light/15 hover:-translate-y-1 transition-all duration-200 reveal-item">
-            <small class="block text-brass-light mb-1">LinkedIn</small>
-            <span>Rathish Rajendran</span>
-          </a>
-          <div class="border border-brass-light/40 rounded-md p-5 reveal-item">
-            <small class="block text-brass-light mb-1">Location</small>
-            <span>Thanjavur, Tamil Nadu, India</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="py-8 text-sm text-muted-light dark:text-muted-dark border-t border-line-light dark:border-line-dark">
-    <div class="max-w-[1060px] mx-auto px-6 flex justify-between gap-4 flex-wrap">
-      <div>© <span id="year">2026</span> R. Rathish, B.Sc. · Housekeeping Supervisor</div>
-      <ul class="flex gap-5 flex-wrap">
-        <li><a href="#profile" class="hover:text-brass transition-colors">Profile</a></li>
-        <li><a href="#experience" class="hover:text-brass transition-colors">Experience</a></li>
-        <li><a href="#skills" class="hover:text-brass transition-colors">Skills</a></li>
-        <li><a href="#contact" class="hover:text-brass transition-colors">Contact</a></li>
-      </ul>
+<section id="education" class="bg-surface border-y border-line py-28">
+  <div class="max-w-4xl mx-auto px-6">
+    <p class="reveal text-sm tracking-[.3em] uppercase text-brass font-semibold">Education &amp; Internship</p>
+    <h2 class="reveal font-heading text-5xl mt-3 mb-12" style="--delay:100ms">Foundations</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="reveal tilt rounded-2xl border border-line bg-bg p-7"><p class="text-xs font-semibold tracking-widest text-brass">2021 – 2024</p><h3 class="font-heading text-3xl mt-1">B.Sc. Hotel Management</h3><p class="text-muted mt-2">Coastal Elango Institute of Hotel Management, Namakkal</p></div>
+      <div class="reveal tilt rounded-2xl border border-line bg-bg p-7" style="--delay:120ms"><p class="text-xs font-semibold tracking-widest text-brass">90 Days · On-the-Job Training</p><h3 class="font-heading text-3xl mt-1">Housekeeping Intern</h3><p class="text-muted mt-2">Four Points by Sheraton</p></div>
     </div>
-  </footer>
+  </div>
+</section>
+</main>
 
-  <!-- External Animation & Interaction Script -->
-  <script src="./main.js" defer></script>
+<footer id="contact" class="max-w-6xl mx-auto px-6 py-28 text-center">
+  <p class="reveal text-sm tracking-[.3em] uppercase text-brass font-semibold">Contact</p>
+  <h2 class="reveal font-heading text-5xl sm:text-7xl mt-4" style="--delay:100ms">Let’s raise the <em class="text-accent">standard</em> together.</h2>
+  <div class="reveal mt-10 flex flex-wrap justify-center gap-4" style="--delay:220ms">
+    <a class="btn magnetic bg-accent text-bg" href="mailto:rathish683@gmail.com">✉ rathish683@gmail.com</a>
+    <a class="btn magnetic border border-line bg-surface" href="tel:+919500956984">☎ +91 95009 56984</a>
+    <a class="btn magnetic border border-line bg-surface" href="https://www.linkedin.com/in/rathish-rajendran-28367a311" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+  </div>
+  <p class="reveal mt-10 text-muted text-sm" style="--delay:300ms">Thanjavur, Tamil Nadu, India – 614 903 · Currently based in Chennai</p>
+  <p class="mt-16 text-xs text-muted">© <span id="year">2026</span> R. Rathish, B.Sc.</p>
+</footer>
+<script src="main.js" defer></script>
 </body>
 </html>
